@@ -143,9 +143,9 @@ export default function RequestPage() {
                   onChange={(e) => { setShowOther(e.target.value === 'other'); setFormData({ ...formData, device: e.target.value }) }}
                 >
                   <option value="">اختر الجهاز المطلوب...</option>
-                  <option value="wheelchair">كرسي متحرك</option>
-                  <option value="pressure">جهاز قياس ضغط</option>
-                  <option value="sugar">جهاز قياس سكر</option>
+                  <option value="كرسي متحرك">كرسي متحرك</option>
+                  <option value="جهاز قياس ضغط">جهاز قياس ضغط</option>
+                  <option value="جهاز قياس سكر">جهاز قياس سكر</option>
                   <option value="other">أخرى</option>
                 </select>
                 {showOther && (
