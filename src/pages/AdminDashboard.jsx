@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabaseClient'
-import { useNavigate } from 'react-router-dom' // 1. أضفنا الاستيراد ده
+import { useNavigate } from 'react-router-dom'
 
 const REQUEST_TYPE_LABELS = {
   prescription: 'روشتة',
@@ -16,7 +16,7 @@ const STATUS_LABELS = {
 }
 
 export default function AdminDashboard() {
-  const navigate = useNavigate() // 2. عرفنا الـ navigate
+  const navigate = useNavigate()
   const [user, setUser] = useState(null)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -54,7 +54,7 @@ export default function AdminDashboard() {
   }
 
   const exportToCSV = () => {
-    const headers = ["الاسم", "الهاتف", "نوع الطلب", "السن", "المدينة", "الأمراض المزمنة", "الأعراض", "التفاصيل", "الحالة", "رابط الروشتة"];
+    const headers = ["الاسم", "الهاتف", "نوع الطلب", "السن", "المدينة", "الجهاز", "الأمراض المزمنة", "الأعراض", "التفاصيل", "الحالة", "رابط الروشتة"];
     const rows = requests.map(req => {
       const imgUrl = req.image_url ? getImageUrl(req.image_url) : "";
       return [
@@ -63,6 +63,7 @@ export default function AdminDashboard() {
         `"${REQUEST_TYPE_LABELS[req.request_type] || req.request_type}"`,
         `"${req.age || ""}"`,
         `"${req.city || ""}"`,
+        `"${req.device || ""}"`,
         `"${req.chronic_diseases || ""}"`,
         `"${req.symptoms || ""}"`,
         `"${req.details || ""}"`,
@@ -89,7 +90,7 @@ export default function AdminDashboard() {
     if (error) {
         alert("خطأ في الدخول: " + error.message)
     } else {
-        navigate(0) // 3. استخدمنا navigate(0) بدلاً من reload
+        navigate(0)
     }
     setLoading(false)
   }
@@ -136,6 +137,8 @@ export default function AdminDashboard() {
                 <td className="p-4">{req.phone}</td>
                 <td className="p-4">{REQUEST_TYPE_LABELS[req.request_type] || req.request_type}</td>
                 <td className="p-4 text-xs text-gray-600">
+                  {req.city && <p>المدينة: {req.city}</p>}
+                  {req.device && <p>الجهاز: {req.device}</p>}
                   {req.chronic_diseases && <p>أمراض: {req.chronic_diseases}</p>}
                   {req.symptoms && <p>أعراض: {req.symptoms}</p>}
                   {req.image_url && <a href={getImageUrl(req.image_url)} target="_blank" rel="noreferrer" className="text-blue-600 underline font-bold">عرض الروشتة</a>}
