@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Tajawal', system-ui, sans-serif;
+}
+
+.app-body {
+  flex-grow: 1;
+}
+
+.app-404 {
+  margin-top: 5rem;
+  text-align: center;
+  color: #64748b;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.app-footer {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #075985;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.app-footer-highlight {
+  font-weight: 900;
+  background: linear-gradient(90deg, #0284c7, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

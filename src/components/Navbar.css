@@ -1,0 +1,68 @@
+.ayda-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 30px -15px rgba(2, 132, 199, 0.35);
+}
+
+.ayda-navbar-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ayda-navbar-logo {
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #0284c7, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+
+.ayda-navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.ayda-navbar-link {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  color: #334155;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.ayda-navbar-link:hover {
+  background: #f0f9ff;
+  color: #0369a1;
+}
+
+.ayda-navbar-admin {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f43f5e, #ef4444);
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 6px 16px -6px rgba(239, 68, 68, 0.5);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ayda-navbar-admin:hover {
+  box-shadow: 0 10px 22px -6px rgba(239, 68, 68, 0.55);
+  transform: translateY(-2px);
+}
